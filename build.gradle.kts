@@ -42,7 +42,7 @@ dependencies {
     compileOnly("org.projectlombok:lombok")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
-    testImplementation("org.flywaydb.flyway-test-extensions:flyway-spring-test:7.0.0")
+    testImplementation("org.flywaydb.flyway-test-extensions:flyway-spring-test:9.5.0")
     testImplementation("org.testcontainers:yugabytedb")
     testImplementation("org.testcontainers:junit-jupiter")
 }
