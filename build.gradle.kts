@@ -1,7 +1,7 @@
 
 plugins {
     id("org.springframework.boot") version "3.2.0"
-    id("io.spring.dependency-management") version "1.1.3"
+    id("io.spring.dependency-management") version "1.1.4"
     id("java")
 }
 
@@ -11,8 +11,6 @@ java {
     sourceCompatibility = JavaVersion.VERSION_17
     targetCompatibility = JavaVersion.VERSION_17
 }
-
-extra["testcontainersVersion"] = "1.17.6"
 
 configurations {
     compileOnly {
@@ -34,8 +32,8 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.flywaydb:flyway-core")
     implementation("org.springframework.retry:spring-retry")
-    implementation("com.yugabyte:jdbc-yugabytedb:42.3.5-yb-3")
-    implementation("org.postgresql:postgresql:42.6.0")
+    implementation("com.yugabyte:jdbc-yugabytedb:42.3.5-yb-4")
+    implementation("org.postgresql:postgresql:42.7.1")
 
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
     annotationProcessor("org.projectlombok:lombok")
@@ -43,14 +41,9 @@ dependencies {
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.flywaydb.flyway-test-extensions:flyway-spring-test:9.5.0")
+    testImplementation("org.springframework.boot:spring-boot-testcontainers")
     testImplementation("org.testcontainers:yugabytedb")
     testImplementation("org.testcontainers:junit-jupiter")
-}
-
-dependencyManagement {
-    imports {
-        mavenBom("org.testcontainers:testcontainers-bom:${property("testcontainersVersion")}")
-    }
 }
 
 tasks.withType<Test> {
