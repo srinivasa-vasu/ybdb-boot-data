@@ -16,21 +16,22 @@ This describes how to build a simple JPA based web application using Spring Boot
 
 This project depends on the following libraries.
 ```gradle
-    implementation("org.springframework.boot:spring-boot-starter-web")
+        implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("org.springframework.boot:spring-boot-starter-validation")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.flywaydb:flyway-core")
     implementation("org.springframework.retry:spring-retry")
-    implementation("com.yugabyte:jdbc-yugabytedb:42.3.5-yb-2")
-    implementation("org.postgresql:postgresql:42.6.0")
-    
+    implementation("com.yugabyte:jdbc-yugabytedb:42.3.5-yb-4")
+    implementation("org.postgresql:postgresql:42.7.1")
+
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
     annotationProcessor("org.projectlombok:lombok")
     compileOnly("org.projectlombok:lombok")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
-    testImplementation("org.flywaydb.flyway-test-extensions:flyway-spring-test:7.0.0")
+    testImplementation("org.flywaydb.flyway-test-extensions:flyway-spring-test:9.5.0")
+    testImplementation("org.springframework.boot:spring-boot-testcontainers")
     testImplementation("org.testcontainers:yugabytedb")
     testImplementation("org.testcontainers:junit-jupiter")
 ```
@@ -76,11 +77,11 @@ It includes two spring profiles
 ```yml
 spring:
   datasource:
-    url: jdbc:tc:yugabyte:2.16.2.0-b41:///yugabyte
+    url: jdbc:tc:yugabyte:2.20.0.1-b1:///yugabyte
     username: yugabyte
     password: yugabyte
 ```
-Update yugabytedb version **jdbc:tc:yugabyte:2.16.2.0-b41:///yugabyte** accordingly.
+Update yugabytedb version **jdbc:tc:yugabyte:2.20.0.1-b1:///yugabyte** accordingly.
 
 ### application-tysql.yaml
 
