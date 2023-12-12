@@ -16,7 +16,7 @@ This describes how to build a simple JPA based web application using Spring Boot
 
 This project depends on the following libraries.
 ```gradle
-        implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("org.springframework.boot:spring-boot-starter-validation")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
