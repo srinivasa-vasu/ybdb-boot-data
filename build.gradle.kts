@@ -1,7 +1,7 @@
 
 plugins {
-    id("org.springframework.boot") version "3.2.5"
-    id("io.spring.dependency-management") version "1.1.4"
+    id("org.springframework.boot") version "3.3.0"
+    id("io.spring.dependency-management") version "1.1.5"
     id("java")
 }
 
@@ -32,7 +32,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.flywaydb:flyway-core")
     implementation("org.springframework.retry:spring-retry")
-    implementation("com.yugabyte:jdbc-yugabytedb:42.3.5-yb-4")
+    implementation("com.yugabyte:jdbc-yugabytedb:42.3.5-yb-5")
     implementation("org.postgresql:postgresql:42.7.3")
 
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
