@@ -105,7 +105,7 @@ spring:
 - **url** is the JDBC connection string. You can set YugabyteDB driver specific properties such as `load-balance` and `topology-keys` as part of this connection string. Update the `host` details accordingly.
 - Driver specific properties can also be specified under **hikari:** sub-section.
 
-## Build the app
+## Build
 
 To build the app:
 
@@ -113,7 +113,7 @@ To build the app:
 gradle build
 ```
 
-## Unit test the app
+## Unit test
 
 To test with Testcontainers:
 
